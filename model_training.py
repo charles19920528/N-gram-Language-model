@@ -2,7 +2,7 @@ import glob
 import model_training_functions as mtf
 import pickle
 
-path = './*.txt'
+path = './data/*.txt'
 txt_files = glob.glob(path)
 # we add 2 special begin chars and one end of text symbols at the beginning and the end of each passage.
 # we only use trigram model at most.

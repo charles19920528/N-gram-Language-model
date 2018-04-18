@@ -79,13 +79,6 @@ def uni_prob(char_freq_dict, vocab_size, perturb_mass, beg_char):
     return prob_dict
 
 
-# uni_probability_dict = uni_prob(char_freq_dict, unicode_upper + 1, 0.1, beg_char)
-#
-# # check if sum up to 1
-# sum(uni_probability_dict.values()) - uni_probability_dict["unseen"] + uni_probability_dict["unseen"] * \
-# (unicode_upper + 1 - len(uni_probability_dict) + 1)
-
-
 def bi_prob(char_freq_dict, freq_dict_bi, vocab_size, perturb_mass):
     # Input: freq_dict_bi: contains counts of (char j, char i) etc.
     # Output: a dictionary of len(freq_dict_bi) - 1 with key (j, i) storing p(word i | word j).

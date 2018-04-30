@@ -13,8 +13,12 @@ for file in txt_files:
     with open(file, "r") as txt:
         sdxl = txt.read()
         if sdxl[len(sdxl) - 1] != '\x03':
-            sdxl = beg_char + beg_char + sdxl + chr(3)
-            string_list.append(sdxl)
+            sdxl = sdxl + chr(3)
+        if sdxl[0] != beg_char and sdxl[1] != beg_char:
+            sdxl = beg_char + beg_char + sdxl
+        elif sdxl[0] == beg_char and sdxl != beg_char:
+            sdxl = beg_char + sdxl
+        string_list.append(sdxl)
 
 merged_string = "".join(string_list)
 char_list = list(merged_string)

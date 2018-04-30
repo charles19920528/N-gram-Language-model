@@ -16,7 +16,7 @@ for file in txt_files:
             sdxl = sdxl + chr(3)
         if sdxl[0] != beg_char and sdxl[1] != beg_char:
             sdxl = beg_char + beg_char + sdxl
-        elif sdxl[0] == beg_char and sdxl != beg_char:
+        elif sdxl[0] == beg_char and sdxl[1] != beg_char:
             sdxl = beg_char + sdxl
         string_list.append(sdxl)
 
